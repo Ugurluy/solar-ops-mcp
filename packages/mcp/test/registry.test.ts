@@ -35,7 +35,12 @@ describe("PV Ops MCP registry", () => {
     expect(result.isError).not.toBe(true);
     expect(result.structuredContent).toMatchObject({
       dataSource: "synthetic",
-      sites: [{ siteId: "demo-sunridge-az" }],
+      sites: [
+        { siteId: "demo-sunridge-az" },
+        { siteId: "demo-cedar-or" },
+        { siteId: "demo-harbor-ca" },
+        { siteId: "demo-mesa-nv" },
+      ],
     });
   });
 });

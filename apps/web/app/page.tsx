@@ -3,9 +3,9 @@ export default function Home() {
     <main>
       <h1>PV Ops MCP</h1>
       <p>
-        Day 1 vertical slice: one fictional site is available through the
+        Day 2: four fictional sites are available through the
         <code> list_demo_sites </code>
-        tool.
+        tool. Production payloads are synthetic vendor-shaped JSON.
       </p>
       <p>All current values are synthetic and are not operational advice.</p>
     </main>
