@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "pv-ops": {
+      "type": "stdio",
+      "command": "/Users/yagizugurlu/.nvm/versions/node/v22.22.3/bin/node",
+      "args": [
+        "/Users/yagizugurlu/Documents/Portfolio/pv-ops-mcp/packages/mcp/dist/cli.js"
+      ]
+    }
+  }
+}

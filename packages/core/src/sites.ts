@@ -1,6 +1,7 @@
 import {
   DemoSiteSchema,
   ListDemoSitesResultSchema,
+  ToolErrorException,
   type DemoSite,
   type ListDemoSitesResult,
 } from "./schemas.js";
@@ -71,7 +72,10 @@ export function listDemoSites(): ListDemoSitesResult {
 export function getDemoSite(siteId: string): DemoSite {
   const site = demoSites.find((candidate) => candidate.siteId === siteId);
   if (!site) {
-    throw new Error(`Unknown demo site: ${siteId}`);
+    throw new ToolErrorException(
+      "UNKNOWN_SITE",
+      `Unknown demo site: ${siteId}`,
+    );
   }
 
   return site;
