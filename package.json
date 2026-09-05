@@ -16,7 +16,9 @@
     "build": "npm run build --workspaces --if-present",
     "dev": "npm run dev --workspace @pv-ops/web",
     "lint": "eslint .",
-    "test": "npm run build --workspace @pv-ops/core --workspace @pv-ops/mcp && npm run test --workspaces --if-present",
+    "test": "npm run build --workspace @pv-ops/core --workspace @yagizugurlu/pv-ops-mcp && npm run test --workspaces --if-present",
+    "sanitize": "node scripts/sanitize.mjs",
+    "pack:inspect": "node scripts/pack-inspect.mjs",
     "typecheck": "npm run typecheck --workspaces --if-present"
   },
   "devDependencies": {

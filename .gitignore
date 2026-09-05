@@ -8,3 +8,6 @@ coverage/
 *.tsbuildinfo
 .DS_Store
 ROADMAP.md
+.cursor/
+.vercel/
+*.tgz

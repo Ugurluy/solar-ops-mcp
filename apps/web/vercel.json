@@ -1,0 +1,5 @@
+{
+  "framework": "nextjs",
+  "installCommand": "cd ../.. && npm ci",
+  "buildCommand": "cd ../.. && npm run build --workspace @pv-ops/core && npm run build --workspace @yagizugurlu/pv-ops-mcp && npm run build --workspace @pv-ops/web"
+}

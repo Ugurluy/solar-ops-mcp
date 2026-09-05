@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "next build",
     "dev": "next dev",
@@ -11,7 +14,7 @@
   },
   "dependencies": {
     "@pv-ops/core": "*",
-    "@pv-ops/mcp": "*",
+    "@yagizugurlu/pv-ops-mcp": "*",
     "mcp-handler": "^2.1.0",
     "next": "^16.3.0",
     "react": "^19.0.0",

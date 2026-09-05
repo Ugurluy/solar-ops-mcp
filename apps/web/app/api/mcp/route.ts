@@ -1,4 +1,4 @@
-import { registerPvOpsTools, SERVER_INFO } from "@pv-ops/mcp";
+import { registerPvOpsTools, SERVER_INFO } from "@yagizugurlu/pv-ops-mcp";
 import { createMcpHandler } from "mcp-handler";
 
 const handler = createMcpHandler((server) => {

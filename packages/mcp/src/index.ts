@@ -21,7 +21,7 @@ export { METHODOLOGY_URI } from "./methodology.js";
 
 export const SERVER_INFO = {
   name: "pv-ops-mcp",
-  version: "0.0.0",
+  version: "0.1.0",
 } as const;
 
 const READ_ONLY = {

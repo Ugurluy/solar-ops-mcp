@@ -8,7 +8,7 @@ This is a portfolio project with **synthetic demo sites**, not operational advic
 
 ## Current status
 
-The MCP server and dashboard are in place. Overview and site detail read the domain model; the Tool Explorer calls same-origin `/api/mcp` over Streamable HTTP. npm publish and Vercel are next.
+The MCP server, dashboard, and sanitization gate are in place. `@yagizugurlu/pv-ops-mcp` is on npm. Deploy the web app to Vercel next.
 
 ## Tools
 
@@ -36,21 +36,49 @@ npm test
 npm run build
 ```
 
-Stdio CLI (after build): `node packages/mcp/dist/cli.js`
-
 Dashboard: `npm run dev`, then `http://localhost:3000` (sites) and `http://localhost:3000/explorer` (MCP Tool Explorer session).
 
 HTTP MCP: point a client at `http://localhost:3000/api/mcp` (POST / Streamable HTTP). Opening that URL in a browser is not a tool call.
 
-Local Cursor / Claude Desktop config (after `npm run build`):
+## npm CLI
+
+After publish:
+
+```bash
+npx -y @yagizugurlu/pv-ops-mcp
+```
+
+Cursor / Claude Desktop:
 
 ```json
 {
   "mcpServers": {
     "pv-ops": {
-      "command": "node",
-      "args": ["/absolute/path/to/pv-ops-mcp/packages/mcp/dist/cli.js"]
+      "command": "npx",
+      "args": ["-y", "@yagizugurlu/pv-ops-mcp"]
     }
   }
 }
+```
+
+Local stdio (after `npm run build`): `node packages/mcp/dist/cli.js`
+
+## Vercel
+
+Import [Ugurluy/solar-ops-mcp](https://github.com/Ugurluy/solar-ops-mcp) in Vercel.
+
+- Framework: Next.js
+- Root Directory: `apps/web`
+- Node.js: 22
+
+`apps/web/vercel.json` installs and builds from the workspace root so `@pv-ops/core` and the MCP package resolve. The remote MCP URL is `https://<your-app>.vercel.app/api/mcp`.
+
+## Checks
+
+```bash
+npm run lint
+npm run typecheck
+npm test
+npm run sanitize -- --history
+npm run pack:inspect
 ```

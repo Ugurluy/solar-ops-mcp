@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["@pv-ops/core", "@pv-ops/mcp"],
+  transpilePackages: ["@pv-ops/core", "@yagizugurlu/pv-ops-mcp"],
   agentRules: false,
 };
 
